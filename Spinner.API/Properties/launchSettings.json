@@ -8,7 +8,7 @@
     "Spinner.API": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "notas_fiscais",
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Production"

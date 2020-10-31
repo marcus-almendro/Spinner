@@ -31,6 +31,7 @@ namespace Spinner.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen();
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionEnabledRequestBehavior<,>));
             services.AddMediatR(typeof(TransactionEnabledRequestBehavior<,>));
             services.AddAutoMapper(typeof(ProdutoMapperProfile));
@@ -51,6 +52,12 @@ namespace Spinner.API
             {
                 app.UseDomainExceptionHandler();
             }
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Spinner V1");
+            });
 
             app.UseRouting();
 
